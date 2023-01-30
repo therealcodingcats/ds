@@ -1,0 +1,9 @@
+﻿{
+  "name": "com.codingcats.ds",
+  "displayName": "Data Structure",
+  "version": "0.0.1",
+  "unity": "2022.2",
+  "description": "Common data structures.",
+  "relatedPackages": {},
+  "type": "library"
+}
