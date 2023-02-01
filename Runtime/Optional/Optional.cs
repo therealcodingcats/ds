@@ -13,14 +13,14 @@ namespace ds
             _value = value;
         }
 
-        public static Optional<ST> Of<ST>(ST value)
+        public static Optional<T> Of(T value)
         {
-            return new Optional<ST>(value);
+            return new Optional<T>(value);
         }
 
-        public static Optional<ST> Empty<ST>()
+        public static Optional<T> Empty()
         {
-            return new Optional<ST>(default);
+            return new Optional<T>(default);
         }
 
         public bool IsEmpty => EqualityComparer<T>.Default.Equals(_value, default);
@@ -32,7 +32,7 @@ namespace ds
 
         public Optional<V> Select<V>(Func<T, V> selector)
         {
-            return IsEmpty ? Empty<V>() : new Optional<V>(selector.Invoke(_value));
+            return IsEmpty ? Optional<V>.Empty() : new Optional<V>(selector.Invoke(_value));
         }
         
         public V Select<V>(Func<T, V> selector, V @default)
